@@ -15,3 +15,10 @@ class LoginPageLocators():
     REGISTRATION_PASSWORD = (By.CSS_SELECTOR, "#id_registration-password1")
     REGISTRATION_PASSWORD_RETRY = (By.CSS_SELECTOR, "#id_registration-password2")
     REGISTRATION_BUTTON = (By.CSS_SELECTOR, "button[value='Register']")
+
+class ProductPageLocators():
+    ADD_BUTTON = (By.CSS_SELECTOR, 'button.btn-lg.btn-primary')
+    ALARM_NAME_PRODUCT = (By.CSS_SELECTOR, 'div.alert:nth-child(1) strong')
+    ALARM_PRICE = (By.CSS_SELECTOR, 'div.alert:nth-child(3) strong')
+    NAME_PRODUCT = (By.CSS_SELECTOR, 'div.product_main h1')
+    PRICE_PRODUCT = (By.CSS_SELECTOR, 'div.product_main p.price_color')
