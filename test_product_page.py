@@ -44,9 +44,18 @@ class TestUserAddToBasketFromProductPage():
                                   "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer8",
                                   "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer9"])
 
-@pytest.mark.need_review
 def test_guest_can_add_product_to_basket(browser,link):
     current_link = link
+    page = ProductPage(browser,current_link)
+    page.open()
+    page.should_be_add_to_cart()
+    page.solve_quiz_and_get_code()
+    page.should_be_correct_name()
+    page.should_be_correct_price()
+
+@pytest.mark.need_review
+def test_guest_can_add_product_to_basket(browser):
+    current_link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0"
     page = ProductPage(browser,current_link)
     page.open()
     page.should_be_add_to_cart()
